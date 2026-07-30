@@ -1,0 +1,3 @@
+Case, TankType, Diameter_mm, Length_mm, Breadth_mm, WaterDepth_mm, StageHeight_mm, ConcreteGrade, SteelGrade, Cover_mm, AllowableBearing_kNpm2, SoilType, SeismicZone, BarMain_mm, BarDist_mm, UserFootingDepth_mm
+CircularExample1,Circular,20000,,,,6000,12000,M25,Fe500,40,150,II,IV,16,8,2000
+RectangularExample1,Rectangular,,12000,8000,4000,8000,M25,Fe500,40,150,II,IV,16,8,1500
