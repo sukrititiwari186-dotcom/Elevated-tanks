@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Preview — 01_Inputs (Elevated Water Tank Design)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body{font-family:Segoe UI,Arial,Helvetica,sans-serif;background:#f6f7fb;color:#222;padding:24px}
+    .sheet{width:1024px;border:1px solid #d1d7e0;background:#fff;padding:16px;box-shadow:0 6px 20px rgba(18,52,86,0.06)}
+    h1{font-size:18px;margin:0 0 12px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:6px 8px;border-bottom:1px solid #eef2f8;text-align:left}
+    th{background:#f0f4fb;color:#0b2b4a}
+    .section{background:#f8fafc;border-left:3px solid #9fbff0;padding:8px;margin-top:12px}
+    .input{background:#e8f7e8}
+    .dropdown{background:#fffbe6}
+    .muted{color:#667085;font-size:13px}
+    .diagram{float:right;width:320px;height:260px;border:1px dashed #cbd5e1;padding:8px;margin-left:12px}
+    .buttons{margin-top:12px}
+    .btn{display:inline-block;background:#2563eb;color:#fff;padding:8px 12px;border-radius:6px;margin-right:8px;text-decoration:none;font-size:13px}
+    .btn-alt{background:#6b7280}
+    .named{font-size:12px;color:#0b3780}
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <h1>01_Inputs — Elevated Water Tank Design (Preview)</h1>
+    <div style="overflow:auto">
+      <div style="float:left;width:640px">
+        <table>
+          <tr><th style="width:220px">Field</th><th style="width:220px">Value</th><th>Notes / Named Range</th></tr>
+          <tr><td>Project</td><td class="input">My Elevated Tank</td><td class="named">Project_Name</td></tr>
+          <tr><td>Designed by</td><td class="input">Keshri</td><td class="named">Designed_By</td></tr>
+          <tr><th colspan="3">Geometry</th></tr>
+          <tr><td>Tank Type</td><td class="dropdown">Circular</td><td class="named">Tank_Type (Circular / Rectangular)</td></tr>
+          <tr><td>Diameter D (mm)</td><td class="input">8000</td><td class="named">Tank_D</td></tr>
+          <tr><td>Length L (mm)</td><td class="muted">—</td><td class="named">Tank_L (hidden for Circular)</td></tr>
+          <tr><td>Breadth B (mm)</td><td class="muted">—</td><td class="named">Tank_B (hidden for Circular)</td></tr>
+          <tr><td>Water depth H (mm)</td><td class="input">6000</td><td class="named">Water_Depth_H</td></tr>
+
+          <tr><th colspan="3">Staging</th></tr>
+          <tr><td>Stage type</td><td class="dropdown">Column Staging</td><td class="named">Stage_Type</td></tr>
+          <tr><td>Stage height Hs (mm)</td><td class="input">7000</td><td class="named">Stage_Height_Hs</td></tr>
+
+          <tr><th colspan="3">Materials & Cover</th></tr>
+          <tr><td>Concrete grade</td><td class="dropdown">M25</td><td class="named">Concrete_Grade → Concrete_fck</td></tr>
+          <tr><td>Steel grade</td><td class="dropdown">Fe500</td><td class="named">Steel_Grade → Steel_fy</td></tr>
+          <tr><td>Clear cover (mm)</td><td class="input">40</td><td class="named">Cover_nom</td></tr>
+
+          <tr><th colspan="3">Soil & Loads</th></tr>
+          <tr><td>Soil Type</td><td class="dropdown">II</td><td class="named">Soil_Type</td></tr>
+          <tr><td>Allowable bearing (kN/m²)</td><td class="input">200</td><td class="named">Allowable_Bearing_kNpm2</td></tr>
+          <tr><td>Seismic Zone</td><td class="dropdown">III</td><td class="named">Seismic_Zone</td></tr>
+          <tr><td>Wind terrain category</td><td class="dropdown">2</td><td class="named">Wind_Terrain</td></tr>
+
+          <tr><th colspan="3">Designer overrides & bars</th></tr>
+          <tr><td>User footing depth (mm)</td><td class="input">1500</td><td class="named">User_Footing_Depth_mm</td></tr>
+          <tr><td>Main bar dia (mm)</td><td class="dropdown">16</td><td class="named">BarDia_Main_mm</td></tr>
+          <tr><td>Distribution bar dia (mm)</td><td class="dropdown">10</td><td class="named">BarDia_Dist_mm</td></tr>
+        </table>
+
+        <div class="buttons">
+          <a class="btn" href="#">Insert Example Circular</a>
+          <a class="btn" href="#">Insert Example Rectangular</a>
+          <a class="btn btn-alt" href="#">Clear Inputs</a>
+          <a class="btn" href="#">Export Output to PDF</a>
+          <a class="btn btn-alt" href="#">Toggle Protect</a>
+        </div>
+
+        <p class="muted" style="margin-top:10px">Named ranges shown in the right column. Conditional formatting will gray out irrelevant fields when Tank Type changes. Input cells are light green; calculation sheets will be locked.</p>
+      </div>
+
+      <div class="diagram">
+        <strong style="display:block;margin-bottom:6px">Interactive diagram</strong>
+        <div style="width:100%;height:160px;border:1px solid #dbe6f5;background:#f8fbff;display:flex;align-items:center;justify-content:center;color:#08316a;font-weight:600">Circular Tank (D = 8000 mm)</div>
+        <ul style="margin:8px 0 0;padding-left:18px;line-height:1.4;font-size:13px">
+          <li>D: <span style="font-weight:600">8000 mm</span></li>
+          <li>H: <span style="font-weight:600">6000 mm</span></li>
+          <li>Stage Hs: <span style="font-weight:600">7000 mm</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="clear:both;margin-top:16px;font-size:13px;color:#374151">
+      <strong>Quick notes:</strong> The final .xlsm will have VBA macros assigned to the buttons, sheet protection (password stored in 00_Info), and the diagram textboxes linked to named ranges so they update automatically. This HTML preview is a visual snapshot of the Inputs sheet currently being implemented.
+    </div>
+  </div>
+</body>
+</html>
